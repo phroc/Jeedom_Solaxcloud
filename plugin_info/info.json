@@ -1,0 +1,20 @@
+{
+	"id" : "solaxcloud",
+	"name" : "Solax Cloud",
+	"description" : "Plugin permettant de récupérer les infos des onduleurs Solax via Solax Cloud",
+	"licence" : "AGPL",
+	"author" : "phroc",
+	"require" : "3.2",
+	"category" : "monitoring",
+	"hasDependency" : false,
+	"hasOwnDeamon" : false,
+	"maxDependancyInstallTime" : 0,
+	"changelog" : "",
+	"documentation" : "",
+	"link" : {
+		"forum":"",
+		"video" : ""
+	},
+	"language" : ["fr_FR"],
+	"compatibility" : ["smart","rpi","diy","mobile","v4"]
+}
