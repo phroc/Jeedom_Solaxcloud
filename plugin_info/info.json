@@ -9,8 +9,8 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/fr_FR/changelog.md",
-	"documentation" : "https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/fr_FR/index.md",
+	"changelog" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/changelog.md",
+	"documentation" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/",
 	"link" : {
 		"forum":"",
 		"video" : ""
