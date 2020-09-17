@@ -11,10 +11,6 @@
 	"maxDependancyInstallTime" : 0,
 	"changelog" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/changelog.md",
 	"documentation" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/",
-	"link" : {
-		"forum":"",
-		"video" : ""
-	},
 	"language" : ["fr_FR"],
 	"compatibility" : ["smart","rpi","diy","mobile","v4"]
 }
