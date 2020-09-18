@@ -1,4 +1,4 @@
-<span style="color: #67A4F2">Descripción del plugin Solax Cloud</span>
+Descripción del plugin Solax Cloud
 ===
 
 El plugin Solax Cloud le permite obtener datos de sus **inversores Solax a través de Solax Cloud**.
@@ -11,31 +11,31 @@ La ventaja del plugin Plugin Solax Cloud es que permite obtener datos de inverso
 <br>
 <br>
 
-<span style="color: #67A4F2">Configuración del plugin Solax Cloud</span>
+Configuración del plugin
 ===
 
 Una vez que haya instalado el plugin desde el market Jeedom, sólo tiene que activarlo. **El plugin no tiene dependencias ni tampoco demonio**. Por consiguiente, no tiene que hacer nada más.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_1.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_1.png)
 
 
 Después, debe crear un equipo nuevo. Para ello, vaya a Plugins / Monitoreo / Solax Cloud.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_2.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_2.png)
 
 Haga clic en "+" (Añadir).
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_3.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_3.png)
 
 Introduzca el nombre del equipo nuevo.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_4.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_4.png)
 
 Después, debe introducir el "Registration No" de su inversor Solax (viene indicado en el mismo).
 
 También debe introducir el "token" obtenido previamente a través de su cuenta Solax Cloud.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_5.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_5.png)
 
 Finalmente, haga clic en "Guardar"
 
@@ -43,24 +43,24 @@ Finalmente, haga clic en "Guardar"
 <br>
 <br>
 
-<span style="color: #67A4F2">Comandos</span>
+Los comandos
 ===
 
 **Los comandos del equipo se crean automaticamente** al guardar la configuración realizada en el punto anterior.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_6.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_6.png)
 
 Obtendrá en su equipo **13 comandos de tipo "información"** que puede hacer visibles y/o historizar como mejor le convenga.
 <br>
 <br> 
 
 
-<span style="color: #67A4F2">Widget</span>
+El widget
 ===
 
 El Widget viene con indicadores circulares, en "bruto". Use el modo "edición" en el dashboard (lápiz situado en la esquina superior derecha) para dejarlo con el tamaño adecuado.
 
-![Solaxcloud](https://phroc.github.io/Jeedom_Solaxcloud/es_ES/pics/Solax_esp_7.png)
+![Solaxcloud](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/es_ES/pics/Solax_esp_7.png)
 
 Puede personalizarlo como más le guste.
 
@@ -135,4 +135,4 @@ Correspondencia de los valores devueltos por el comando "Inverter Status":
 <span style="color: #67A4F2">Información complementaria</span>
 ===
 
-Documentation en français disponible [ici](https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/)
+Documentation en français disponible [ici](https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/fr_FR/index.md)
