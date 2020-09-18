@@ -376,7 +376,7 @@ class solaxcloud extends eqLogic {
 		$invertertype = $json['result']['inverterType'];
 		$inverterstatus = $json['result']['inverterStatus'];
 
-		if ($acpower == '') {
+		if ($invertertype == '') {
 			$this->checkAndUpdateCmd('acpower', 0);
 			$this->checkAndUpdateCmd('yieldtoday', 0);
 			$this->checkAndUpdateCmd('yieldtotal', 0);
