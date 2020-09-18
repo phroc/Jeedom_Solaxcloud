@@ -1,1 +1,1 @@
-* 15/09/2020: 1ere version du plugin.
+* 15/09/2020:	Première version du plugin
