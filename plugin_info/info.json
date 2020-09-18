@@ -9,8 +9,8 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/changelog.md",
-	"documentation" : "https://phroc.github.io/Jeedom_Solaxcloud/fr_FR/",
+	"changelog" : "https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/fr_FR/changelog.md",
+	"documentation" : "https://github.com/phroc/Jeedom_Solaxcloud/blob/master/docs/fr_FR/index.md",
 	"language" : ["fr_FR"],
-	"compatibility" : ["smart","rpi","diy","mobile","v4"]
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","v4"]
 }
