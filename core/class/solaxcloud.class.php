@@ -108,15 +108,16 @@ class solaxcloud extends eqLogic {
     }
 
     public function preSave() {
-
+		$this->setDisplay("width","400px");
+		$this->setDisplay("height","350px");
     }
-
+    
  // Fonction exécutée automatiquement après la sauvegarde (création ou mise à jour) de l'équipement 
     public function postSave() {	
 		$info = $this->getCmd(null, 'acpower');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Inverter AC Power Total', __FILE__));
+			$info->setName(__('AC Power (Total)', __FILE__));
 		}
 		$info->setLogicalId('acpower');
 		$info->setEqLogic_id($this->getId());
@@ -125,13 +126,13 @@ class solaxcloud extends eqLogic {
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);	
 		$info->setUnite('W');
-		$info->setOrder(1);
+		$info->setOrder(4);
 		$info->save();
 		
 		$info = $this->getCmd(null, 'yieldtoday');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Energy Out Daily', __FILE__));
+			$info->setName(__('AC Energy Out (Daily)', __FILE__));
 		}
 		$info->setLogicalId('yieldtoday');
 		$info->setEqLogic_id($this->getId());
@@ -139,61 +140,16 @@ class solaxcloud extends eqLogic {
 		$info->setSubType('numeric');
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
-		$info->setOrder(2);		
+		$info->setOrder(5);		
 		$info->setUnite('kWh');
 		$info->save();
 		
 		$info = $this->getCmd(null, 'yieldtotal');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Energy Out Total', __FILE__));
+			$info->setName(__('AC Energy Out (Total)', __FILE__));
 		}
 		$info->setLogicalId('yieldtotal');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(0);
-		$info->setIsVisible(1);
-		$info->setOrder(3);
-		$info->setUnite('kWh');
-		$info->save();
-		
-		$info = $this->getCmd(null, 'feedinpower');
-		if (!is_object($info)) {
-			$info = new solaxcloudCmd();
-			$info->setName(__('Power Total', __FILE__));
-		}
-		$info->setLogicalId('feedinpower');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(0);
-		$info->setIsVisible(1);
-		$info->setOrder(4);
-		$info->setUnite('W');
-		$info->save();
-		
-		$info = $this->getCmd(null, 'feedinenergy');
-		if (!is_object($info)) {
-			$info = new solaxcloudCmd();
-			$info->setName(__('Energy to Grid Total', __FILE__));
-		}
-		$info->setLogicalId('feedinenergy');
-		$info->setEqLogic_id($this->getId());
-		$info->setType('info');
-		$info->setSubType('numeric');
-		$info->setIsHistorized(0);
-		$info->setIsVisible(1);
-		$info->setOrder(5);
-		$info->setUnite('kWh');
-		$info->save();
-		
-		$info = $this->getCmd(null, 'consumeenergy');
-		if (!is_object($info)) {
-			$info = new solaxcloudCmd();
-			$info->setName(__('Energy from Grid Total', __FILE__));
-		}
-		$info->setLogicalId('consumeenergy');
 		$info->setEqLogic_id($this->getId());
 		$info->setType('info');
 		$info->setSubType('numeric');
@@ -203,10 +159,55 @@ class solaxcloud extends eqLogic {
 		$info->setUnite('kWh');
 		$info->save();
 		
+		$info = $this->getCmd(null, 'feedinpower');
+		if (!is_object($info)) {
+			$info = new solaxcloudCmd();
+			$info->setName(__('GCP Power (Total)', __FILE__));
+		}
+		$info->setLogicalId('feedinpower');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setIsHistorized(0);
+		$info->setIsVisible(1);
+		$info->setOrder(7);
+		$info->setUnite('W');
+		$info->save();
+		
+		$info = $this->getCmd(null, 'feedinenergy');
+		if (!is_object($info)) {
+			$info = new solaxcloudCmd();
+			$info->setName(__('Energy -> Grid (Total)', __FILE__));
+		}
+		$info->setLogicalId('feedinenergy');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setIsHistorized(0);
+		$info->setIsVisible(1);
+		$info->setOrder(8);
+		$info->setUnite('kWh');
+		$info->save();
+		
+		$info = $this->getCmd(null, 'consumeenergy');
+		if (!is_object($info)) {
+			$info = new solaxcloudCmd();
+			$info->setName(__('Energy <- Grid (Total)', __FILE__));
+		}
+		$info->setLogicalId('consumeenergy');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setIsHistorized(0);
+		$info->setIsVisible(1);
+		$info->setOrder(9);
+		$info->setUnite('kWh');
+		$info->save();
+		
 		$info = $this->getCmd(null, 'feedinpowerM2');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Meter AC Power Total', __FILE__));
+			$info->setName(__('Add.2 Meter AC Power (Total)', __FILE__));
 		}
 		$info->setLogicalId('feedinpowerM2');
 		$info->setEqLogic_id($this->getId());
@@ -214,7 +215,7 @@ class solaxcloud extends eqLogic {
 		$info->setSubType('numeric');
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);		
-		$info->setOrder(7);	
+		$info->setOrder(10);	
 		$info->setUnite('KWh');
 		$info->save();
 		
@@ -230,7 +231,7 @@ class solaxcloud extends eqLogic {
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
 		$info->setUnite('%');
-		$info->setOrder(8);		
+		$info->setOrder(11);		
 		$info->save();
 		
 		$info = $this->getCmd(null, 'peps1');
@@ -245,7 +246,7 @@ class solaxcloud extends eqLogic {
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
 		$info->setUnite('W');
-		$info->setOrder(9);		
+		$info->setOrder(12);		
 		$info->save();
 		
 		$info = $this->getCmd(null, 'peps2');
@@ -260,13 +261,13 @@ class solaxcloud extends eqLogic {
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
 		$info->setUnite('W');
-		$info->setOrder(10);		
+		$info->setOrder(13);		
 		$info->save();
 		
 		$info = $this->getCmd(null, 'peps3');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('AC ESP Power T', __FILE__));
+			$info->setName(__('AC EPS Power T', __FILE__));
 		}
 		$info->setLogicalId('peps3');
 		$info->setEqLogic_id($this->getId());
@@ -275,35 +276,35 @@ class solaxcloud extends eqLogic {
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);		
 		$info->setUnite('W');
-		$info->setOrder(11);
+		$info->setOrder(14);
 		$info->save();
 		
 		$info = $this->getCmd(null, 'invertertype');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Inverter type', __FILE__));
+			$info->setName(__('Inverter type: ', __FILE__));
 		}
 		$info->setLogicalId('invertertype');
 		$info->setEqLogic_id($this->getId());
 		$info->setType('info');
-		$info->setSubType('numeric');
+		$info->setSubType('string');
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
-		$info->setOrder(12);
+		$info->setOrder(2);
 		$info->save();
 		
 		$info = $this->getCmd(null, 'inverterstatus');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Inverter status', __FILE__));
+			$info->setName(__('Inverter status: ', __FILE__));
 		}
 		$info->setLogicalId('inverterstatus');
 		$info->setEqLogic_id($this->getId());
 		$info->setType('info');
-		$info->setSubType('numeric');
+		$info->setSubType('string');
 		$info->setIsHistorized(0);
 		$info->setIsVisible(1);
-		$info->setOrder(13);
+		$info->setOrder(3);
 		$info->save();
 			
 		$refresh = $this->getCmd(null, 'refresh');
@@ -317,7 +318,7 @@ class solaxcloud extends eqLogic {
 		$refresh->setSubType('other');
 		$info->setIsHistorized(0);
 		$info->setIsVisible(0);	
-		$refresh->setOrder(14);
+		$refresh->setOrder(1);
 		$refresh->save();		
     }
  // Fonction exécutée automatiquement avant la suppression de l'équipement 
@@ -359,6 +360,10 @@ class solaxcloud extends eqLogic {
 			$this->checkAndUpdateCmd('status', 'Error retrieving data');
 			return;
 		}
+
+		$tinvtyp = array(1=>'X1-LX', 2=>'X-Hybrid', 3=>'X1-Hybiyd/Fit', 4=>'X1-Boost/Air/Mini', 5=>'X3-Hybiyd/Fit', 6=>'X3-20K/30K', 7=>'X3-MIC/PRO', 8=>'X1-Smart', 9=>'X1-AC', 10=>'A1-Hybrid', 11=>'A1-Fit', 12=>'A1-Grid', 13=>'J1-ESS');
+		
+		$tinvstat = array(100=>'Wait Mode', 101=>'Check Mode', 102=>'Normal Mode', 103=>'Fault Mode', 104=>'Permanent Fault Mode', 105=>'Update Mode', 106=>'EPS Check Mode', 107=>'EPS Mode', 108=>'Self-Test Mode', 109=>'Idle Mode', 110=>'Standby Mode', 111=>'Pv Wake Up Bat Mode', 112=>'Gen Check Mode', 113=>'Gen Run Mode');		
 		
 		$json = json_decode($data, true);
 		
@@ -373,8 +378,10 @@ class solaxcloud extends eqLogic {
 		$peps1 = $json['result']['peps1'];
 		$peps2 = $json['result']['peps2'];
 		$peps3 = $json['result']['peps3'];
-		$invertertype = $json['result']['inverterType'];
-		$inverterstatus = $json['result']['inverterStatus'];
+		$invtyp = $json['result']['inverterType'];
+		$invstat = $json['result']['inverterStatus'];
+		$invertertype = $tinvtyp[$invtyp];				
+		$inverterstatus = $tinvstat[$invstat];
 
 		if ($invertertype == '') {
 			$this->checkAndUpdateCmd('acpower', 0);
@@ -388,8 +395,8 @@ class solaxcloud extends eqLogic {
 			$this->checkAndUpdateCmd('peps1', 0);
 			$this->checkAndUpdateCmd('peps2', 0);
 			$this->checkAndUpdateCmd('peps3', 0);
-			$this->checkAndUpdateCmd('invertertype', 0);
-			$this->checkAndUpdateCmd('inverterstatus', 0);
+			$this->checkAndUpdateCmd('invertertype', '');
+			$this->checkAndUpdateCmd('inverterstatus', '');
 			} else {
 			curl_close ($ch);
 			$this->checkAndUpdateCmd('acpower', $acpower);
