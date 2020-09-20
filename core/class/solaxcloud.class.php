@@ -177,7 +177,7 @@ class solaxcloud extends eqLogic {
 		$info = $this->getCmd(null, 'feedinenergy');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Energy -> Grid (Total)', __FILE__));
+			$info->setName(__('Energy to Grid (Total)', __FILE__));
 		}
 		$info->setLogicalId('feedinenergy');
 		$info->setEqLogic_id($this->getId());
@@ -192,7 +192,7 @@ class solaxcloud extends eqLogic {
 		$info = $this->getCmd(null, 'consumeenergy');
 		if (!is_object($info)) {
 			$info = new solaxcloudCmd();
-			$info->setName(__('Energy <- Grid (Total)', __FILE__));
+			$info->setName(__('Energy from Grid (Total)', __FILE__));
 		}
 		$info->setLogicalId('consumeenergy');
 		$info->setEqLogic_id($this->getId());
