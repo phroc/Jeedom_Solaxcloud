@@ -425,7 +425,7 @@ class solaxcloud extends eqLogic {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
 		// COLLECTING VALUES
-		curl_setopt($ch, CURLOPT_URL, 'https://www.solaxcloud.com:9443/proxy/api/getRealtimeInfo.do?tokenId=' .$solaxcloud_token.'&sn=' .$solaxcloud_regisno);
+		curl_setopt($ch, CURLOPT_URL, 'https://global.solaxcloud.com/proxyApp/proxy/api/getRealtimeInfo.do?tokenId=' .$solaxcloud_token.'&sn=' .$solaxcloud_regisno);
 		$data = curl_exec($ch);
 		
 		if (curl_errno($ch)) {
